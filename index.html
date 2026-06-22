@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Footer - Digital Security</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* สไตล์หลักของ Footer (พื้นหลังสีเข้ม ตัวอักษรสีขาว) */
+        .site-footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 60px 20px 30px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr; /* แบ่งเป็น 3 คอลัมน์บนจอใหญ่ */
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        /* เส้นใต้หัวข้อเพิ่มความสวยงาม */
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #00adb5; /* สีไฮไลต์ */
+        }
+
+        .footer-section p {
+            color: #cccccc;
+        }
+
+        /* สไตล์เมนูเว็บไซต์ และ Hover Effect */
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: all 0.3s ease; /* เอฟเฟกต์การเปลี่ยนสีแบบนุ่มนวล */
+            display: inline-block;
+        }
+
+        /* เอฟเฟกต์เมื่อเอาเมาส์ไปวางบนเมนู */
+        .footer-links a:hover {
+            color: #00adb5;
+            transform: translateX(5px); /* ขยับไปทางขวาเล็กน้อย */
+        }
+
+        /* สไตล์ช่องทางการติดต่อและโซเชียลมีเดีย */
+        .contact-info li {
+            margin-bottom: 12px;
+            color: #cccccc;
+            list-style: none;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: #00adb5;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            background-color: #333333;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* เอฟเฟกต์ Hover ของไอคอนโซเชียล */
+        .social-icons a.facebook:hover { background-color: #1877f2; }
+        .social-icons a.instagram:hover { background-color: #e1306c; }
+        .social-icons a.line:hover { background-color: #06c755; }
+        
+        .social-icons a:hover {
+            transform: translateY(-5px); /* ลอยขึ้นเล็กน้อย */
+        }
+
+        /* เส้นคั่นและเครดิตด้านล่างสุด */
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #333333;
+            text-align: center;
+            color: #888888;
+            font-size: 14px;
+        }
+
+        /* --- ปรับแต่งเพื่อรองรับการแสดงผลบนมือถือ (Responsive) --- */
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr; /* ยุบรวมเป็น 1 คอลัมน์แนวตั้ง */
+                gap: 30px;
+            }
+
+            .site-footer {
+                padding: 40px 20px 20px;
+                text-align: center; /* จัดเนื้อหาให้อยู่ตรงกลางบนมือถือ */
+            }
+
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%); /* จัดเส้นใต้ให้อยู่ตรงกลางตามหัวข้อ */
+            }
+
+            .footer-links a:hover {
+                transform: none; /* ปิดการขยับขวาบนมือถือเพื่อความสบายตา */
+                color: #00adb5;
+            }
+
+            .social-icons {
+                justify-content: center; /* จัดไอคอนโซเชียลให้อยู่ตรงกลาง */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div style="min-height: 50vh; padding: 20px; text-align: center;">
+        <h2>เนื้อหาหลักของเว็บไซต์</h2>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            
+            <div class="footer-section">
+                <h3>ศูนย์ความปลอดภัยทางดิจิทัล</h3>
+                <p>เรามุ่งมั่นสร้างความตระหนักรู้และป้องกันภัยคุกคามออนไลน์ (Cyber Security) เพื่อให้สังคมก้าวสู่ยุคดิจิทัลได้อย่างปลอดภัย "ไม่มีระบบใดในโลกที่ปลอดภัย 100% ความปลอดภัยที่แท้จริงเริ่มต้นที่ความตระหนักรู้ของผู้ใช้งาน"</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>ศูนย์ความรู้</h3>
+                <ul class="footer-links">
+                    <li><a href="#">หน้าแรก</a></li>
+                    <li><a href="#">วิธีป้องกันภัย Phishing</a></li>
+                    <li><a href="#">การตั้งรหัสผ่านและการใช้งาน 2FA</a></li>
+                    <li><a href="#">รับมือมัลแวร์เรียกค่าไถ่</a></li>
+                    <li><a href="#">รู้จักหลักการ CIA Triad</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>ติดต่อเรา</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 อาคารสถิต ชั้น 5 ถนนสุขุมวิท กรุงเทพฯ 10110</li>
+                    <li><i class="fas fa-phone"></i> 02-123-4567</li>
+                    <li><i class="fas fa-envelope"></i> security-info@youragency.go.th</li>
+                </ul>
+                
+                <div class="social-icons">
+                    <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="line" title="Line"><i class="fab fa-line"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 ศูนย์ความปลอดภัยทางดิจิทัล. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
